@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_singel_game"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="dai.com.tictactoe.SingelGameActivity">
+
+    <LinearLayout
+        android:background="@color/colorAccent"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:layout_height="fill_parent">
+
+            <Button
+                android:id="@+id/btF1C1"
+                android:background="@drawable/background_button"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="fill_parent" />
+            <Button
+                android:id="@+id/btF1C2"
+                android:background="@drawable/background_button"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_height="fill_parent" />
+
+            <Button
+                android:id="@+id/btF1C3"
+                android:background="@drawable/background_button"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="fill_parent"/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:layout_height="fill_parent">
+
+            <Button
+                android:id="@+id/btF2C1"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/background_button"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="fill_parent"
+                />
+
+            <Button
+                android:id="@+id/btF2C2"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/background_button"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_height="fill_parent"/>
+
+            <Button
+                android:layout_marginTop="3dp"
+                android:background="@drawable/background_button"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="fill_parent"
+                android:id="@+id/btF2C3" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:layout_height="fill_parent">
+
+            <Button
+                android:id="@+id/btF3C1"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/background_button"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="fill_parent"
+                />
+
+            <Button
+                android:id="@+id/btF3C2"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/background_button"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_height="fill_parent"
+                />
+
+            <Button
+                android:id="@+id/btF3C3"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/background_button"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="fill_parent" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

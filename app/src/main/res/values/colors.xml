@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4CAF50</color>
+    <color name="colorPrimaryDark">#388E3C</color>
+    <color name="colorAccent">#009688</color>
+    <color name="lightPrimaryColot">#C8E6C9</color>
+    <color name="textIconColor">#FFFFFF</color>
+    <color name="textPrimary">#212121</color>
+    <color name="textSecondary">#757575</color>
+    <color name="colorDivider">#BDBDBD</color>
+    <color name="colofocusButton">#ffe0b2</color>
+    <color name="coloPressButton">#ff9800</color>
+    <color name="coloDefaultButton">#ffffff</color>
+
+</resources>

@@ -51,6 +51,7 @@ public class SingelGameActivity extends AppCompatActivity implements View.OnClic
         switch (v.getId()) {
 
                 case R.id.btF1C1:
+
                     if(spGame.posicion(0,0)== 1 || spGame.posicion(0,0)== -1){
                         Toast.makeText(this, "Posicion ocupada", Toast.LENGTH_SHORT).show();
                     }else{

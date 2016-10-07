@@ -51,21 +51,21 @@ public class SingelGameActivity extends AppCompatActivity implements View.OnClic
         switch (v.getId()) {
 
                 case R.id.btF1C1:
-
                     if(spGame.posicion(0,0)== 1 || spGame.posicion(0,0)== -1){
                         Toast.makeText(this, "Posicion ocupada", Toast.LENGTH_SHORT).show();
-                    }else{
-                        spGame.playGame(0,0);
-                        if (spGame.posicion(0,0) == 1) {
-                            if (spGame.sumaFila1() == 3 || spGame.sumaColumna1() == 3 || spGame.sumaDiagonalIzquierda() == 3){
+                    }else {
+                        spGame.playGame(0, 0);
+
+                        if (spGame.posicion(0, 0) == 1) {
+                            if (spGame.sumaFila1() == 3 || spGame.sumaColumna1() == 3 || spGame.sumaDiagonalIzquierda() == 3) {
                                 btF1C1.setBackgroundColor(Color.BLACK);
                                 spGame.finJuego();
                                 Toast.makeText(this, "Juego terminado", Toast.LENGTH_SHORT).show();
-                            }else
-                            btF1C1.setBackgroundColor(Color.BLACK);
+                            } else
+                                btF1C1.setBackgroundColor(Color.BLACK);
 
                         } else {
-                            if (spGame.posicion(0,0) == -1) {
+                            if (spGame.posicion(0, 0) == -1) {
                                 if (spGame.sumaFila1() == -3 || spGame.sumaColumna1() == -3 || spGame.sumaDiagonalIzquierda() == -3) {
                                     btF1C1.setBackgroundColor(Color.BLUE);
                                     spGame.finJuego();

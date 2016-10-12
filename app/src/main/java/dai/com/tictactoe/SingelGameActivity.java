@@ -54,27 +54,42 @@ public class SingelGameActivity extends AppCompatActivity implements View.OnClic
 
                     if(spGame.posicion(0,0)== 1 || spGame.posicion(0,0)== -1){
                         Toast.makeText(this, "Posicion ocupada", Toast.LENGTH_SHORT).show();
-                    }else{
-                        spGame.playGame(0,0);
-                        if (spGame.posicion(0,0) == 1) {
-                            if (spGame.sumaFila1() == 3 || spGame.sumaColumna1() == 3 || spGame.sumaDiagonalIzquierda() == 3){
+                    }else {
+                        spGame.playGame(0, 0);
+                        if (spGame.getNumeroJugada() == 9 && spGame.sumaFila1() != 3 && spGame.sumaFila1() != -3 && spGame.sumaColumna1() != 3 &&
+                                spGame.sumaColumna1() != -3 && spGame.sumaDiagonalIzquierda() != 3 && spGame.sumaDiagonalIzquierda() != -3) {
+                            if (spGame.posicion(0, 0) == 1) {
                                 btF1C1.setBackgroundColor(Color.BLACK);
-                                spGame.finJuego();
-                                Toast.makeText(this, "Juego terminado", Toast.LENGTH_SHORT).show();
-                            }else
-                            btF1C1.setBackgroundColor(Color.BLACK);
+                            } else {
+                                if (spGame.posicion(0, 0) == -1) {
+                                    btF1C1.setBackgroundColor(Color.BLUE);
+                                }
+
+                            }
+                            Toast.makeText(this, "Empate...", Toast.LENGTH_SHORT).show();
 
                         } else {
-                            if (spGame.posicion(0,0) == -1) {
-                                if (spGame.sumaFila1() == -3 || spGame.sumaColumna1() == -3 || spGame.sumaDiagonalIzquierda() == -3) {
-                                    btF1C1.setBackgroundColor(Color.BLUE);
+                            if (spGame.posicion(0, 0) == 1) {
+                                if (spGame.sumaFila1() == 3 || spGame.sumaColumna1() == 3 || spGame.sumaDiagonalIzquierda() == 3) {
+                                    btF1C1.setBackgroundColor(Color.BLACK);
                                     spGame.finJuego();
                                     Toast.makeText(this, "Juego terminado", Toast.LENGTH_SHORT).show();
-                                } else {
-                                    btF1C1.setBackgroundColor(Color.BLUE);
+                                } else
+                                    btF1C1.setBackgroundColor(Color.BLACK);
 
+                            } else {
+                                if (spGame.posicion(0, 0) == -1) {
+                                    if (spGame.sumaFila1() == -3 || spGame.sumaColumna1() == -3 || spGame.sumaDiagonalIzquierda() == -3) {
+                                        btF1C1.setBackgroundColor(Color.BLUE);
+                                        spGame.finJuego();
+                                        Toast.makeText(this, "Juego terminado", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        btF1C1.setBackgroundColor(Color.BLUE);
+
+                                    }
                                 }
                             }
+
                         }
                     }
                     break;
@@ -83,27 +98,40 @@ public class SingelGameActivity extends AppCompatActivity implements View.OnClic
 
                     if (spGame.posicion(0,1) == 1 || spGame.posicion(0,1) == -1 ){
                         Toast.makeText(this, "Posicion ocupada", Toast.LENGTH_SHORT).show();
-                    }else{
-                        spGame.playGame(0,1);
-                        if (spGame.posicion(0,1) == 1){
-                            if (spGame.sumaFila1() == 3 || spGame.sumaColumna2() == 3){
+                    }else {
+                        spGame.playGame(0, 1);
+                        if (spGame.getNumeroJugada() == 9 && spGame.sumaFila1() != 3 && spGame.sumaFila1() != -3 &&
+                                spGame.sumaColumna2() != 3 && spGame.sumaColumna2() != -3) {
+                            if (spGame.posicion(0, 1) == 1) {
                                 btF1C2.setBackgroundColor(Color.BLACK);
-                                spGame.finJuego();
-                                Toast.makeText(this, "Juego terminado", Toast.LENGTH_SHORT).show();
-                            }else{
-                                btF1C2.setBackgroundColor(Color.BLACK);
+                            } else {
+                                if (spGame.posicion(0, 1) == -1) {
+                                    btF1C2.setBackgroundColor(Color.BLUE);
+                                }
 
                             }
-                        }else {
-                            if (spGame.posicion(0,1) == -1) {
-
-                                if (spGame.sumaFila1() == -3 || spGame.sumaColumna2() == -3) {
-                                    btF1C2.setBackgroundColor(Color.BLUE);
+                            Toast.makeText(this, "Empate...", Toast.LENGTH_SHORT).show();
+                        } else {
+                            if (spGame.posicion(0, 1) == 1) {
+                                if (spGame.sumaFila1() == 3 || spGame.sumaColumna2() == 3) {
+                                    btF1C2.setBackgroundColor(Color.BLACK);
                                     spGame.finJuego();
                                     Toast.makeText(this, "Juego terminado", Toast.LENGTH_SHORT).show();
                                 } else {
-                                    btF1C2.setBackgroundColor(Color.BLUE);
+                                    btF1C2.setBackgroundColor(Color.BLACK);
 
+                                }
+                            } else {
+                                if (spGame.posicion(0, 1) == -1) {
+
+                                    if (spGame.sumaFila1() == -3 || spGame.sumaColumna2() == -3) {
+                                        btF1C2.setBackgroundColor(Color.BLUE);
+                                        spGame.finJuego();
+                                        Toast.makeText(this, "Juego terminado", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        btF1C2.setBackgroundColor(Color.BLUE);
+
+                                    }
                                 }
                             }
                         }
@@ -115,25 +143,39 @@ public class SingelGameActivity extends AppCompatActivity implements View.OnClic
                     if (spGame.posicion(0,2) == 1 || spGame.posicion(0,2) == -1){
                         Toast.makeText(this, "Posision ocupada", Toast.LENGTH_SHORT).show();
                     }else {
-                        spGame.playGame(0,2);
-                        if (spGame.posicion(0,2)==1){
-                            if (spGame.sumaFila1() == 3 || spGame.sumaColumna3() == 3 || spGame.sumaDiagonalDerecha() == 3){
+                        spGame.playGame(0, 2);
+                        if (spGame.getNumeroJugada() == 9 && spGame.sumaFila1() != 3 && spGame.sumaFila1() != -3 && spGame.sumaColumna3() != 3 &&
+                                spGame.sumaColumna3() != -3 && spGame.sumaDiagonalDerecha() != 3 && spGame.sumaDiagonalDerecha() != -3) {
+                            if (spGame.posicion(0, 2) == 1) {
                                 btF1C3.setBackgroundColor(Color.BLACK);
-                                spGame.finJuego();
-                                Toast.makeText(this, "Juego terminado", Toast.LENGTH_SHORT).show();
-                            }else {
-                                btF1C3.setBackgroundColor(Color.BLACK);
+                            } else {
+                                if (spGame.posicion(0, 2) == -1) {
+                                    btF1C3.setBackgroundColor(Color.BLUE);
+                                }
 
                             }
-                        }else {
-                            if (spGame.posicion(0, 2) == -1) {
-                                if (spGame.sumaFila1() == -3 || spGame.sumaColumna3() == -3 || spGame.sumaDiagonalDerecha() == -3) {
-                                    btF1C3.setBackgroundColor(Color.BLUE);
+                            Toast.makeText(this, "Empate...", Toast.LENGTH_SHORT).show();
+
+                        } else {
+                            if (spGame.posicion(0, 2) == 1) {
+                                if (spGame.sumaFila1() == 3 || spGame.sumaColumna3() == 3 || spGame.sumaDiagonalDerecha() == 3) {
+                                    btF1C3.setBackgroundColor(Color.BLACK);
                                     spGame.finJuego();
                                     Toast.makeText(this, "Juego terminado", Toast.LENGTH_SHORT).show();
                                 } else {
-                                    btF1C3.setBackgroundColor(Color.BLUE);
+                                    btF1C3.setBackgroundColor(Color.BLACK);
 
+                                }
+                            } else {
+                                if (spGame.posicion(0, 2) == -1) {
+                                    if (spGame.sumaFila1() == -3 || spGame.sumaColumna3() == -3 || spGame.sumaDiagonalDerecha() == -3) {
+                                        btF1C3.setBackgroundColor(Color.BLUE);
+                                        spGame.finJuego();
+                                        Toast.makeText(this, "Juego terminado", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        btF1C3.setBackgroundColor(Color.BLUE);
+
+                                    }
                                 }
                             }
                         }
@@ -144,25 +186,39 @@ public class SingelGameActivity extends AppCompatActivity implements View.OnClic
                     if (spGame.posicion(1,0) == 1 || spGame.posicion(1,0) == -1){
                         Toast.makeText(this, "Posision ocupada", Toast.LENGTH_SHORT).show();
                     }else {
-                        spGame.playGame(1,0);
-                        if (spGame.posicion(1,0)==1){
-                            if (spGame.sumaFila2() == 3 || spGame.sumaColumna1() == 3){
+                        spGame.playGame(1, 0);
+                        if (spGame.getNumeroJugada() == 9 && spGame.sumaFila2() != 3 && spGame.sumaFila2() != -3 && spGame.sumaColumna1() != 3 &&
+                                spGame.sumaColumna1() != -3) {
+                            if (spGame.posicion(1, 0) == 1) {
                                 btF2C1.setBackgroundColor(Color.BLACK);
-                                spGame.finJuego();
-                                Toast.makeText(this, "Juego terminado", Toast.LENGTH_SHORT).show();
-                            }else {
-                                btF2C1.setBackgroundColor(Color.BLACK);
-                                btF2C1.setEnabled(false);
-                            }
-                        }else {
-                            if (spGame.posicion(1, 0) == -1) {
-                                if (spGame.sumaFila2() == -3 || spGame.sumaColumna1() == -3) {
+                            } else {
+                                if (spGame.posicion(1, 0) == -1) {
                                     btF2C1.setBackgroundColor(Color.BLUE);
+                                }
+
+                            }
+                            Toast.makeText(this, "Empate...", Toast.LENGTH_SHORT).show();
+
+                        } else {
+                            if (spGame.posicion(1, 0) == 1) {
+                                if (spGame.sumaFila2() == 3 || spGame.sumaColumna1() == 3) {
+                                    btF2C1.setBackgroundColor(Color.BLACK);
                                     spGame.finJuego();
                                     Toast.makeText(this, "Juego terminado", Toast.LENGTH_SHORT).show();
                                 } else {
-                                    btF2C1.setBackgroundColor(Color.BLUE);
+                                    btF2C1.setBackgroundColor(Color.BLACK);
+                                    btF2C1.setEnabled(false);
+                                }
+                            } else {
+                                if (spGame.posicion(1, 0) == -1) {
+                                    if (spGame.sumaFila2() == -3 || spGame.sumaColumna1() == -3) {
+                                        btF2C1.setBackgroundColor(Color.BLUE);
+                                        spGame.finJuego();
+                                        Toast.makeText(this, "Juego terminado", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        btF2C1.setBackgroundColor(Color.BLUE);
 
+                                    }
                                 }
                             }
                         }
@@ -173,23 +229,38 @@ public class SingelGameActivity extends AppCompatActivity implements View.OnClic
                     if (spGame.posicion(1,1) == 1 || spGame.posicion(1,1) == -1){
                         Toast.makeText(this, "Posision ocupada", Toast.LENGTH_SHORT).show();
                     }else {
-                        spGame.playGame(1,1);
-                        if (spGame.posicion(1,1)== 1){
-                            if (spGame.sumaFila2() == 3 || spGame.sumaColumna2() == 3 || spGame.sumaDiagonalIzquierda()== 3 || spGame.sumaDiagonalDerecha() == 3){
+                        spGame.playGame(1, 1);
+                        if (spGame.getNumeroJugada() == 9 && spGame.sumaFila2() != 3 && spGame.sumaFila2() != -3 && spGame.sumaColumna2() != 3 &&
+                                spGame.sumaColumna2() != -3 && spGame.sumaDiagonalIzquierda() != 3 && spGame.sumaDiagonalIzquierda() != -3 &&
+                                spGame.sumaDiagonalDerecha() != 3 && spGame.sumaDiagonalDerecha() != -3) {
+                            if (spGame.posicion(1, 1) == 1) {
                                 btF2C2.setBackgroundColor(Color.BLACK);
-                                spGame.finJuego();
-                                Toast.makeText(this, "Juego terminado", Toast.LENGTH_SHORT).show();
-                            }else {
-                                btF2C2.setBackgroundColor(Color.BLACK);
-                            }
-                        }else {
-                            if (spGame.posicion(1, 1) == -1) {
-                                if (spGame.sumaFila2() == -3 || spGame.sumaColumna2() == -3 || spGame.sumaDiagonalIzquierda() == -3 || spGame.sumaDiagonalDerecha() == -3) {
+                            } else {
+                                if (spGame.posicion(1, 1) == -1) {
                                     btF2C2.setBackgroundColor(Color.BLUE);
+                                }
+
+                            }
+                            Toast.makeText(this, "Empate...", Toast.LENGTH_SHORT).show();
+
+                        } else {
+                            if (spGame.posicion(1, 1) == 1) {
+                                if (spGame.sumaFila2() == 3 || spGame.sumaColumna2() == 3 || spGame.sumaDiagonalIzquierda() == 3 || spGame.sumaDiagonalDerecha() == 3) {
+                                    btF2C2.setBackgroundColor(Color.BLACK);
                                     spGame.finJuego();
                                     Toast.makeText(this, "Juego terminado", Toast.LENGTH_SHORT).show();
                                 } else {
-                                    btF2C2.setBackgroundColor(Color.BLUE);
+                                    btF2C2.setBackgroundColor(Color.BLACK);
+                                }
+                            } else {
+                                if (spGame.posicion(1, 1) == -1) {
+                                    if (spGame.sumaFila2() == -3 || spGame.sumaColumna2() == -3 || spGame.sumaDiagonalIzquierda() == -3 || spGame.sumaDiagonalDerecha() == -3) {
+                                        btF2C2.setBackgroundColor(Color.BLUE);
+                                        spGame.finJuego();
+                                        Toast.makeText(this, "Juego terminado", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        btF2C2.setBackgroundColor(Color.BLUE);
+                                    }
                                 }
                             }
                         }
@@ -200,23 +271,36 @@ public class SingelGameActivity extends AppCompatActivity implements View.OnClic
                     if (spGame.posicion(1,2) == 1 || spGame.posicion(1,2) == -1){
                         Toast.makeText(this, "Posision ocupada", Toast.LENGTH_SHORT).show();
                     }else {
-                        spGame.playGame(1,2);
-                        if (spGame.posicion(1,2)==1){
-                            if (spGame.sumaFila2() == 3 || spGame.sumaColumna3() == 3){
+                        spGame.playGame(1, 2);
+                        if (spGame.getNumeroJugada() == 9 && spGame.sumaFila2() != 3 && spGame.sumaFila2() != -3 && spGame.sumaColumna3() != 3 &&
+                                spGame.sumaColumna3() != -3) {
+                            if (spGame.posicion(1, 2) == 1) {
                                 btF2C3.setBackgroundColor(Color.BLACK);
-                                spGame.finJuego();
-                                Toast.makeText(this, "Juego terminado", Toast.LENGTH_SHORT).show();
-                            }else {
-                                btF2C3.setBackgroundColor(Color.BLACK);
-                            }
-                        }else {
-                            if (spGame.posicion(1, 2) == -1) {
-                                if (spGame.sumaFila2() == -3 || spGame.sumaColumna3() == -3) {
+                            } else {
+                                if (spGame.posicion(1, 2) == -1) {
                                     btF2C3.setBackgroundColor(Color.BLUE);
+                                }
+
+                            }
+                            Toast.makeText(this, "Empate...", Toast.LENGTH_SHORT).show();
+                        } else {
+                            if (spGame.posicion(1, 2) == 1) {
+                                if (spGame.sumaFila2() == 3 || spGame.sumaColumna3() == 3) {
+                                    btF2C3.setBackgroundColor(Color.BLACK);
                                     spGame.finJuego();
                                     Toast.makeText(this, "Juego terminado", Toast.LENGTH_SHORT).show();
                                 } else {
-                                    btF2C3.setBackgroundColor(Color.BLUE);
+                                    btF2C3.setBackgroundColor(Color.BLACK);
+                                }
+                            } else {
+                                if (spGame.posicion(1, 2) == -1) {
+                                    if (spGame.sumaFila2() == -3 || spGame.sumaColumna3() == -3) {
+                                        btF2C3.setBackgroundColor(Color.BLUE);
+                                        spGame.finJuego();
+                                        Toast.makeText(this, "Juego terminado", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        btF2C3.setBackgroundColor(Color.BLUE);
+                                    }
                                 }
                             }
                         }
@@ -227,23 +311,37 @@ public class SingelGameActivity extends AppCompatActivity implements View.OnClic
                     if (spGame.posicion(2,0) == 1 || spGame.posicion(2,0) == -1){
                         Toast.makeText(this, "Posision ocupada", Toast.LENGTH_SHORT).show();
                     }else {
-                        spGame.playGame(2,0);
-                        if (spGame.posicion(2,0)==1){
-                            if (spGame.sumaFila3() == 3 || spGame.sumaColumna1() == 3 || spGame.sumaDiagonalDerecha() == 3){
+                        spGame.playGame(2, 0);
+                        if (spGame.getNumeroJugada() == 9 && spGame.sumaFila3() != 3 && spGame.sumaFila3() != -3 && spGame.sumaColumna1() != 3 &&
+                                spGame.sumaColumna1() != -3 && spGame.sumaDiagonalDerecha() != 3 && spGame.sumaDiagonalDerecha() != -3) {
+                            if (spGame.posicion(2, 0) == 1) {
                                 btF3C1.setBackgroundColor(Color.BLACK);
-                                spGame.finJuego();
-                                Toast.makeText(this, "Juego terminado", Toast.LENGTH_SHORT).show();
-                            }else {
-                                btF3C1.setBackgroundColor(Color.BLACK);
-                            }
-                        }else {
-                            if (spGame.posicion(2, 0) == -1) {
-                                if (spGame.sumaFila3() == -3 || spGame.sumaColumna1() == -3 || spGame.sumaDiagonalDerecha() == -3) {
+                            } else {
+                                if (spGame.posicion(2, 0) == -1) {
                                     btF3C1.setBackgroundColor(Color.BLUE);
+                                }
+
+                            }
+                            Toast.makeText(this, "Empate...", Toast.LENGTH_SHORT).show();
+
+                        } else {
+                            if (spGame.posicion(2, 0) == 1) {
+                                if (spGame.sumaFila3() == 3 || spGame.sumaColumna1() == 3 || spGame.sumaDiagonalDerecha() == 3) {
+                                    btF3C1.setBackgroundColor(Color.BLACK);
                                     spGame.finJuego();
                                     Toast.makeText(this, "Juego terminado", Toast.LENGTH_SHORT).show();
                                 } else {
-                                    btF3C1.setBackgroundColor(Color.BLUE);
+                                    btF3C1.setBackgroundColor(Color.BLACK);
+                                }
+                            } else {
+                                if (spGame.posicion(2, 0) == -1) {
+                                    if (spGame.sumaFila3() == -3 || spGame.sumaColumna1() == -3 || spGame.sumaDiagonalDerecha() == -3) {
+                                        btF3C1.setBackgroundColor(Color.BLUE);
+                                        spGame.finJuego();
+                                        Toast.makeText(this, "Juego terminado", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        btF3C1.setBackgroundColor(Color.BLUE);
+                                    }
                                 }
                             }
                         }
@@ -253,23 +351,37 @@ public class SingelGameActivity extends AppCompatActivity implements View.OnClic
                     if (spGame.posicion(2,1) == 1 || spGame.posicion(2,1) == -1){
                         Toast.makeText(this, "Posision ocupada", Toast.LENGTH_SHORT).show();
                     }else {
-                        spGame.playGame(2,1);
-                        if (spGame.posicion(2,1)==1){
-                            if (spGame.sumaFila3() == 3 || spGame.sumaColumna2() == 3){
+                        spGame.playGame(2, 1);
+                        if (spGame.getNumeroJugada() == 9 && spGame.sumaFila3() != 3 && spGame.sumaFila3() != -3 && spGame.sumaColumna2() != 3 &&
+                                spGame.sumaColumna2() != -3) {
+                            if (spGame.posicion(2, 1) == 1) {
                                 btF3C2.setBackgroundColor(Color.BLACK);
-                                spGame.finJuego();
-                                Toast.makeText(this, "Juego terminado", Toast.LENGTH_SHORT).show();
-                            }else {
-                                btF3C2.setBackgroundColor(Color.BLACK);
-                            }
-                        }else {
-                            if (spGame.posicion(2, 1) == -1) {
-                                if (spGame.sumaFila3() == -3 || spGame.sumaColumna2() == -3) {
+                            } else {
+                                if (spGame.posicion(2, 1) == -1) {
                                     btF3C2.setBackgroundColor(Color.BLUE);
+                                }
+
+                            }
+                            Toast.makeText(this, "Empate...", Toast.LENGTH_SHORT).show();
+
+                        } else {
+                            if (spGame.posicion(2, 1) == 1) {
+                                if (spGame.sumaFila3() == 3 || spGame.sumaColumna2() == 3) {
+                                    btF3C2.setBackgroundColor(Color.BLACK);
                                     spGame.finJuego();
                                     Toast.makeText(this, "Juego terminado", Toast.LENGTH_SHORT).show();
                                 } else {
-                                    btF3C2.setBackgroundColor(Color.BLUE);
+                                    btF3C2.setBackgroundColor(Color.BLACK);
+                                }
+                            } else {
+                                if (spGame.posicion(2, 1) == -1) {
+                                    if (spGame.sumaFila3() == -3 || spGame.sumaColumna2() == -3) {
+                                        btF3C2.setBackgroundColor(Color.BLUE);
+                                        spGame.finJuego();
+                                        Toast.makeText(this, "Juego terminado", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        btF3C2.setBackgroundColor(Color.BLUE);
+                                    }
                                 }
                             }
                         }
@@ -280,29 +392,42 @@ public class SingelGameActivity extends AppCompatActivity implements View.OnClic
                     if (spGame.posicion(2,2) == 1 || spGame.posicion(2,2) == -1){
                         Toast.makeText(this, "Posision ocupada", Toast.LENGTH_SHORT).show();
                     }else {
-                        spGame.playGame(2,2);
-                        if (spGame.posicion(2,2)==1){
-                            if (spGame.sumaFila3() == 3 || spGame.sumaColumna3() == 3 || spGame.sumaDiagonalIzquierda() == 3){
+                        spGame.playGame(2, 2);
+                        if (spGame.getNumeroJugada() == 9 && spGame.sumaFila3() != 3 && spGame.sumaFila3() != -3 && spGame.sumaColumna3() != 3 &&
+                                spGame.sumaColumna3() != -3 && spGame.sumaDiagonalIzquierda() != 3 && spGame.sumaDiagonalIzquierda() != -3) {
+                            if (spGame.posicion(2, 2) == 1) {
                                 btF3C3.setBackgroundColor(Color.BLACK);
-                                spGame.finJuego();
-                                Toast.makeText(this, "Juego terminado", Toast.LENGTH_SHORT).show();
-                            }else {
-                                btF3C3.setBackgroundColor(Color.BLACK);
-                            }
-                        }else {
-                            if (spGame.posicion(2, 2) == -1) {
-                                if (spGame.sumaFila3() == -3 || spGame.sumaColumna3() == -3 || spGame.sumaDiagonalIzquierda() == -3) {
+                            } else {
+                                if (spGame.posicion(2, 2) == -1) {
                                     btF3C3.setBackgroundColor(Color.BLUE);
+                                }
+
+                            }
+                            Toast.makeText(this, "Empate..."+spGame.posicion(2,2),Toast.LENGTH_SHORT).show();
+
+                        } else {
+                            if (spGame.posicion(2, 2) == 1) {
+                                if (spGame.sumaFila3() == 3 || spGame.sumaColumna3() == 3 || spGame.sumaDiagonalIzquierda() == 3) {
+                                    btF3C3.setBackgroundColor(Color.BLACK);
                                     spGame.finJuego();
                                     Toast.makeText(this, "Juego terminado", Toast.LENGTH_SHORT).show();
                                 } else {
-                                    btF3C3.setBackgroundColor(Color.BLUE);
+                                    btF3C3.setBackgroundColor(Color.BLACK);
+                                }
+                            } else {
+                                if (spGame.posicion(2, 2) == -1) {
+                                    if (spGame.sumaFila3() == -3 || spGame.sumaColumna3() == -3 || spGame.sumaDiagonalIzquierda() == -3) {
+                                        btF3C3.setBackgroundColor(Color.BLUE);
+                                        spGame.finJuego();
+                                        Toast.makeText(this, "Juego terminado", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        btF3C3.setBackgroundColor(Color.BLUE);
+                                    }
                                 }
                             }
                         }
                     }
                     break;
-
         }
 
     }

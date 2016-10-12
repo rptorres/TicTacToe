@@ -44,7 +44,6 @@ public class singelPlayerGame {
         return this.enTurno;
     }
 
-
     //Metodo para llenar la Matriz
     public void matrizLLena() {
         for (int i = 0; i < myGame.length; i++) {
@@ -54,8 +53,6 @@ public class singelPlayerGame {
             }
         }
     }
-
-
 
     public void playGame(int f, int c) {
 
